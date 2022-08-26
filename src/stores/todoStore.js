@@ -24,6 +24,25 @@ const useTodoStore = create(
           }),
         }));
       },
+
+      modifyTodo: (todo) => {
+        set((state) => ({
+          ...state,
+          todos: state.todos.filter((todo) => {
+            const newTodo = todo;
+            return newTodo;
+          }),
+        }));
+      },
+
+      deleteTodo: (id) => {
+        set((state) => ({
+          ...state,
+          todos: state.todos.filter((todo) => {
+            return todo.id !== id;
+          }),
+        }));
+      },
     }))
   )
 );

@@ -1,6 +1,6 @@
 import { Heading, VStack, IconButton, useColorMode } from "@chakra-ui/react";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
@@ -24,7 +24,13 @@ const App = () => {
     todoStore.checkTodo(todo);
   };
 
-  const deleteTodo = () => {};
+  const modifyTodo = (todo) => {
+    todoStore.modifyTodo(todo);
+  };
+
+  const deleteTodo = (todo) => {
+    todoStore.deleteTodo(todo);
+  };
 
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -51,6 +57,7 @@ const App = () => {
         todos={todoStore.todos}
         onDeleteTodo={deleteTodo}
         onCheckTodo={checkTodo}
+        onModifyTodo={modifyTodo}
       />
       <AddTodo addTodo={addTodo} />
     </VStack>

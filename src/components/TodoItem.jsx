@@ -30,7 +30,11 @@ const TodoItem = (props) => {
         isRound="true"
         onClick={() => props.onCheckTodo(props.data)}
       />
-      <IconButton icon={<FaPen />} isRound="true" />
+      <IconButton
+        icon={<FaPen />}
+        isRound="true"
+        onClick={() => props.onModifyTodo(props.data)}
+      />
       <IconButton
         icon={<FaTrash />}
         isRound="true"

@@ -5,7 +5,7 @@ import TodoItem from "./TodoItem";
 
 import useTodoStore from "../stores/todoStore";
 
-const TodoList = ({ todos, onDeleteTodo, onCheckTodo }) => {
+const TodoList = ({ todos, onDeleteTodo, onCheckTodo, onModifyTodo }) => {
   const todoStore = useTodoStore((state) => state);
 
   if (!todos.length) {
@@ -31,6 +31,7 @@ const TodoList = ({ todos, onDeleteTodo, onCheckTodo }) => {
         <TodoItem
           onDeleteTodo={onDeleteTodo}
           onCheckTodo={onCheckTodo}
+          onModifyTodo={onModifyTodo}
           data={todo}
           key={todo.id}
         />
